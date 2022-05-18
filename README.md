@@ -29,3 +29,6 @@ UART output to the screen
 
 ## File system
 `Core` Folder contains my code for `dht11.h`, `dht11.c`, `main.c`. 
+
+## Others
+To understand more about the communication process, please visit: https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf
