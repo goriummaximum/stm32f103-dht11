@@ -23,7 +23,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-#include "delay.h"
 #include "dht11.h"
 /* USER CODE END Includes */
 
@@ -96,8 +95,7 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim4);
-  delay_init(&htim4);
-  dht11_init(&huart1);
+  dht11_init(&htim4, &huart1);
 
   char uart_buf[100];
   int uart_buf_len;
@@ -130,7 +128,7 @@ int main(void)
 		  );
 		  HAL_UART_Transmit(&huart1, (uint8_t *)uart_buf, uart_buf_len, 100);
 	  }
-	  HAL_Delay(500);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -15,7 +15,6 @@
 
 #include "main.h"
 #include "dht11.h"
-#include "delay.h"
 
 static dht11_data_t data_buffer;
 static dht11_data_t data_tmp;
@@ -27,8 +26,18 @@ static UART_HandleTypeDef *huart;
 static char uart_buf[100];
 static uint8_t uart_buf_len = 0;
 
-void dht11_init(UART_HandleTypeDef *huart_para) {
+static TIM_HandleTypeDef *htim;
+static uint16_t start_tick;
+
+void dht11_init(TIM_HandleTypeDef *htim_para, UART_HandleTypeDef *huart_para) {
+	htim = htim_para;
 	huart = huart_para;
+}
+
+static void delay_us(uint16_t wait) {
+	__HAL_TIM_SET_COUNTER(htim, 0);
+	start_tick = __HAL_TIM_GET_COUNTER(htim);
+	while (__HAL_TIM_GET_COUNTER(htim) - start_tick < wait) {};
 }
 
 static void set_data_pin_input(void) {
