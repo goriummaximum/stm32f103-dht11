@@ -21,11 +21,11 @@ You can use STM32CUBEMXIDE, choose STM32F10C8 and refer to the code here.
 
 ## Result
 Schematic
-![schematic](https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/schematic.png)
+<img src="https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/schematic.png" height="100">
 Real circuit
-![real_circuit](https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/real_circuit.jpg)
+<img src="https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/real_circuit.jpg" height="100">
 UART output to the screen
-![print](https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/print.PNG)
+<img src="https://github.com/goriummaximum/stm32f103-dht11/blob/main/images/print.PNG" height="100">
 
 ## File system
 `Core` Folder contains my code for `dht11.h`, `dht11.c`, `main.c`. 
