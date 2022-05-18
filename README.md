@@ -14,7 +14,10 @@ To practice STM32 MCU programming, manipulate timer.
 To update my CV, i know, LOL.
 
 ## How?
-C programming with STM32CUBEMX, using HAL framework, upload code to real hardware.
+C programming with STM32CUBEMX, using HAL framework, upload code to real hardware using STMFlashDemostrator via UART, debug via UART.
+
+## How to run?
+You can use STM32CUBEMXIDE, choose STM32F10C8 and refer to the code here.
 
 ## File system
 `Core` Folder contains my code for `dht11.h`, `dht11.c`, `main.c`. 
