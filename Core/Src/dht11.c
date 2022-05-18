@@ -90,7 +90,7 @@ static void reset(void) {
 }
 
 static uint8_t send_start(void) {
-	//pull down data pin for 18ms
+	//pull down data pin for 20ms
 	set_data_pin_output();
 	pull_down_data_pin();
 	delay_us(20000);
@@ -113,7 +113,7 @@ static uint8_t send_start(void) {
 static void read_data(void) {
 	while (bit_counter < 40) {
 		//wait for next bit
-		while (read_data_pin() != GPIO_PIN_RESET) {};
+		while (read_data_pin() != GPIO_PIN_RESET) {}; //if DHT failure at this point -> always SET, the MCU will be stuck
 		while (read_data_pin() != GPIO_PIN_SET) {};
 		//delay 40us to check the different point between bit 0 and 1
 		delay_us(40);
